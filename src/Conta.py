@@ -18,12 +18,24 @@ class Conta:
         return f"{self.__class__.__name__}: "\
             f"{', '.join([f'{chave}={valor}' for chave, valor  in self.__dict__.items()])}"
     
-    def detalhes_titular(self) -> None:
-        print(f'Nome: {self.titular.nome}')
-        print(f'Sobrenome: {self.titular.sobrenome}')
-        print(f'CPF: {self.titular.cpf}')
-        print(f'RG: {self.titular.rg}')
-        print(f'Data Nasc.: {self.titular.data_nascimento}')
+    def dados_titular(self) -> None:
+        print('# DADOS GERAL DO TITULAR')
+        self.titular.nome
+        self.titular.sobrenome
+        self.titular.cpf
+        self.titular.rg
+        self.titular.data_nascimento
+        print()
+        return None
+    
+    def endereco_geral(self) -> None:
+        print('# ENDEREÇO GERAL DO TITULAR')
+        self.titular.endereco.numero_da_casa
+        self.titular.endereco.rua
+        self.titular.endereco.bairro
+        self.titular.endereco.minicipio
+        self.titular.endereco.estado
+        print()
         return None
 
     @property
