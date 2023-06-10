@@ -1,12 +1,14 @@
+from src.Endereco import Endereco
 
 class Pessoa:
 
-    def __init__(self, nome: str, sobrenome: str, data_nascimento: str, rg: str, cpf: str) -> None:
+    def __init__(self, nome: str, sobrenome: str, data_nascimento: str, rg: str, cpf: str, endereco: Endereco) -> None:
         self._nome = nome
         self._sobrenome = sobrenome
         self._data_nascimento =  data_nascimento
         self._rg = rg
         self._cpf = cpf
+        self.endereco = endereco
 
     def __str__(self) -> str:
         return f"{self.__class__.__name__}: "\
@@ -16,6 +18,9 @@ class Pessoa:
     def nome(self) -> None:
         print(f'Nome: {self._nome}')
         return None
+    
+    def get_nome(self) -> str:
+        return self._nome
     
     def alterar_nome(self, nome) -> None:
         if isinstance(nome, str):
@@ -31,6 +36,9 @@ class Pessoa:
         print(f'Sobrenome: {self._sobrenome}')
         return None
     
+    def get_sobrenome(self) -> str:
+        return self._sobrenome
+    
     def alterar_sobrenome(self, sobrenome) -> None:
         if isinstance(sobrenome, str):
             self._sobrenome = sobrenome
@@ -45,6 +53,9 @@ class Pessoa:
         print(f'Data Nasc.: {self._data_nascimento}')
         return None
     
+    def get_data_nascimento(self) -> str:
+        return self._data_nascimento
+    
     def alterar_data_nascimento(self, data_nascimento) -> None:
         self._data_nascimento = data_nascimento
 
@@ -54,6 +65,9 @@ class Pessoa:
     def rg(self) -> None:
         print(f'RG: {self._rg}')
         return None
+    
+    def get_rg(self) -> str:
+        return self._rg
     
     def alterar_rg(self, rg) -> None:
         if len(rg) == 7:
@@ -70,6 +84,9 @@ class Pessoa:
     def cpf(self) -> None:
         print(f'CPF: {self._cpf}')
         return None
+    
+    def get_cpf(self) -> str:
+        return self._cpf
     
     def alterar_cpf(self, cpf: str) -> None:
         if len(cpf) == 11:
