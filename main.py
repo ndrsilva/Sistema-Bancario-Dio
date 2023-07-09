@@ -23,6 +23,8 @@ def menu():
 
 if __name__ == '__main__':
     conta = Conta()
+    clientes = []
+    contas = []
 
     while True:
         opcao = menu()
@@ -35,7 +37,17 @@ if __name__ == '__main__':
             valor = float(input('Informe o valor do saque:\nR$ '))
             conta.saque(valor)
 
-        elif opcao == '3':
+        elif opcao == '4':
+            cpf = input('Informe o CPF do cliente.\nCPF: ')
+
+            for index, cliente in enumerate(clientes):
+                if cpf == cliente.get_cpf():
+                    print('Vamos criar a sua conta.')
+                    conta = Conta(numero='1', titular=cliente, saldo=50, limite_saldo=2000)
+                    contas.append(conta)
+                    break
+              
+        elif opcao == '6':
             nome = input('Nome: ')
             sobrenome = input('Sobrenome: ')
             data_nasc = input('Data Nasc. (dd/mm/aaaa): ')
@@ -50,3 +62,5 @@ if __name__ == '__main__':
 
             endereco = Endereco(rua, numero, bairro, municipio, estado)
             cliente = Pessoa(nome, sobrenome, data_nasc, rg, cpf, endereco)
+
+            clientes.append(cliente)
