@@ -1,4 +1,4 @@
-# sistema-bancario
+# sistema-bancario - *Em desenvolvimento*
 Plataforma Dio / Desafio do Curso de Python Developer - Criar um Sistema Bancário em Python.
 
 ## Parte 01
